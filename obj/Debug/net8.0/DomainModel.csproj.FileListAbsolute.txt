@@ -13,3 +13,4 @@ C:\Users\Valentino\Documents\Programacion\DomainModel\DomainModel\obj\Debug\net8
 C:\Users\Valentino\Documents\Programacion\DomainModel\DomainModel\obj\Debug\net8.0\refint\DomainModel.dll
 C:\Users\Valentino\Documents\Programacion\DomainModel\DomainModel\obj\Debug\net8.0\DomainModel.pdb
 C:\Users\Valentino\Documents\Programacion\DomainModel\DomainModel\obj\Debug\net8.0\ref\DomainModel.dll
+C:\Users\Valentino\Documents\Programacion\DomainModel\DomainModel\obj\Debug\net8.0\DomainModel.sourcelink.json
