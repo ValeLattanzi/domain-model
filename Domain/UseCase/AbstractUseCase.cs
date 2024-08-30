@@ -5,22 +5,22 @@ using TestManager.Exceptions;
 
 namespace DomainModel.Domain.UseCase;
 
-public abstract class AbstractUseCase<TEntity, TDTO> : IUseCase<TEntity, TDTO>
+public abstract class AbstractUseCase<T, Request> : IUseCase<T, Request>
 {
     public AbstractUseCase()
     {
         AcceptanceCriteria = [];
-        UseCaseValidator = new ValidateAcceptanceCriteria<TEntity>();
+        UseCaseValidator = new ValidateAcceptanceCriteria<T>();
     }
 
     #region Properties
-    private IValidateAcceptanceCriteria<TEntity> UseCaseValidator { get; set; }
+    private IValidateAcceptanceCriteria<T> UseCaseValidator { get; set; }
 
-    protected abstract TEntity Entity { get; set; }
-    protected abstract IEnumerable<AcceptanceCriteria<TEntity>> AcceptanceCriteria { get; set; }
+    protected abstract T Entity { get; set; }
+    protected abstract IEnumerable<AcceptanceCriteria<T>> AcceptanceCriteria { get; set; }
     #endregion
 
-    public async Task<TEntity?> Execute(TDTO dto, string useCase)
+    public async Task<T?> Execute(Request dto, string useCase)
     {
         var _result = await Start(dto);
 
@@ -38,9 +38,9 @@ public abstract class AbstractUseCase<TEntity, TDTO> : IUseCase<TEntity, TDTO>
     #region Functions
     // Implement at the subclasses
     protected abstract void DefineAcceptanceCriteria();
+    protected abstract Task<T?> Start(Request dto);
 
-    protected abstract Task<TEntity?> Start(TDTO dto);
-    private async Task<IEnumerable<ValidationResult<TEntity>>> ValidateAcceptanceCriteria()
+    private async Task<IEnumerable<ValidationResult<T>>> ValidateAcceptanceCriteria()
     {
         return await UseCaseValidator.ValidateAcceptanceCriterias(AcceptanceCriteria, Entity);
     }
