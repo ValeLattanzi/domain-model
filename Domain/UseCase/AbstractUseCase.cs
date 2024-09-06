@@ -1,7 +1,6 @@
-﻿using ApiArquitect.Domain.Interface;
-using DomainModel.Domain.Contract;
+﻿using DomainModel.Domain.Contract;
 using DomainModel.Model.Class;
-using TestManager.Exceptions;
+using ExceptionManager.Model;
 
 namespace DomainModel.Domain.UseCase;
 
@@ -38,7 +37,7 @@ public abstract class AbstractUseCase<T, Request> : IUseCase<T, Request>
     #region Functions
     // Implement at the subclasses
     protected abstract void DefineAcceptanceCriteria();
-    protected abstract Task<T?> Start(Request dto);
+    protected abstract Task<T?> Start(Request createClientRequest);
 
     private async Task<IEnumerable<ValidationResult<T>>> ValidateAcceptanceCriteria()
     {
