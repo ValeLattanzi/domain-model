@@ -1,6 +1,6 @@
 ﻿using DomainModel.Model.Class;
 
-namespace ApiArquitect.Domain.Interface;
+namespace DomainModel.Domain.Contract;
 
 internal interface IValidateAcceptanceCriteria<T>
 {

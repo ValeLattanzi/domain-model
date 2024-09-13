@@ -1098,7 +1098,10 @@
           "Newtonsoft.Json": "13.0.3"
         },
         "runtime": {
-          "ExceptionManager.dll": {}
+          "ExceptionManager.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

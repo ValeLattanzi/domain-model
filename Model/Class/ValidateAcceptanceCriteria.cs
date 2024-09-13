@@ -1,4 +1,4 @@
-﻿using ApiArquitect.Domain.Interface;
+﻿using DomainModel.Domain.Contract;
 
 namespace DomainModel.Model.Class;
 
