@@ -1,7 +1,7 @@
 ﻿using ApiArquitect.Domain.Interface;
 using DomainModel.Domain.Contract;
 using DomainModel.Model.Class;
-using TestManager.Exceptions;
+using ExceptionManager.Model;
 
 namespace DomainModel.Domain.UseCase;
 
